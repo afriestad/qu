@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.dataporten',
+    'dataporten',
     'course_admin',
 ]
 
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dataporten.middleware.DataportenGroupsMiddleware',
 ]
 
 ROOT_URLCONF = 'qu.urls'
@@ -132,3 +134,8 @@ STATIC_URL = '/static/'
 
 # SITE ID for Dataporten auth
 SITE_ID = 1
+
+DATAPORTEN_TOKEN_FUNCTION = 'utils.dataporten_token_function.allauth_token'
+DATAPORTEN_CACHE_REQUESTS = False
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
