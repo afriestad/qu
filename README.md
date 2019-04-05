@@ -6,7 +6,7 @@ queueyeue :)
 
 1. If you don't have one already, create a superuser with `python manage.py createsuperuser`.
 
-2. From the django admin panel [http://localhost:8000/admin](http://localhost:8000/admin), go into `Sites` and change the site with ID 1 to domain `localhost` and name `Localhost`.
+2. From the django admin panel ([http://localhost:8000/admin](http://localhost:8000/admin)), go into `Sites` and change the site with ID 1 to domain `localhost` and name `Localhost`.
 
 3. Log in to the [Dataporten Dashboard](https://dashboard.dataporten.no) and register a new application for login. Name and description can be whatever, redirect url should be `http://localhost:8000/accounts/dataporten/login/callback/`.
 
