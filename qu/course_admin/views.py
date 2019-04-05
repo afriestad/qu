@@ -3,10 +3,6 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-# Create your views here.
-from course_admin.models import Course
-
-
 class IndexView(LoginRequiredMixin, View):
     template_name = 'course_admin/index.html'
 
