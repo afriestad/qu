@@ -1,5 +1,39 @@
-{% extends 'qu/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
   <h1>It works</h1>
+
+  {% if taught_courses %}
+    <div class="card">
+      <h1>Courses you teach</h1>
+      {% for course in taught_courses %}
+        <div class="course" id="{{ course.pk }}">
+          <p class="course-title">{{ course.course_code }} – {{ course.name }} ({{ course.year|date:"Y" }})</p>
+          <p class="course-active-students">Active students: {{ course.students|length }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if taken_courses %}
+    <div class="card">
+      <h1>Courses you teach</h1>
+      {% for course in taken_courses %}
+        <div class="course" id="{{ course.pk }}">
+          <p class="course-title">{{ course.course_code }} – {{ course.name }} ({{ course.year|date:"Y" }})</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if assisted_courses %}
+    <div class="card">
+      <h1>Courses you teach</h1>
+      {% for course in assisted_courses %}
+        <div class="course" id="{{ course.pk }}">
+          <p class="course-title">{{ course.course_code }} – {{ course.name }} ({{ course.year|date:"Y" }})</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endblock %}

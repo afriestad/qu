@@ -4,8 +4,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
+from course_admin.models import Course
+
+
 class IndexView(LoginRequiredMixin, View):
     template_name = 'course_admin/index.html'
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+        context = {
+            'taken_courses': request.user.taken_courses.all(),
+            'assisted_courses': request.user.assisted_courses.all(),
+            'taught_courses': request.user.taught_courses.all()
+        }
+
+        return render(request, self.template_name, context=context)
