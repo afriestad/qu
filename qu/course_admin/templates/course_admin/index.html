@@ -17,7 +17,7 @@
 
   {% if taken_courses %}
     <div class="card">
-      <h1>Courses you teach</h1>
+      <h1>Courses where you are a student</h1>
       {% for course in taken_courses %}
         <div class="course" id="{{ course.pk }}">
           <p class="course-title">{{ course.course_code }} – {{ course.name }} ({{ course.year|date:"Y" }})</p>
@@ -28,7 +28,7 @@
 
   {% if assisted_courses %}
     <div class="card">
-      <h1>Courses you teach</h1>
+      <h1>Courses in which you assist</h1>
       {% for course in assisted_courses %}
         <div class="course" id="{{ course.pk }}">
           <p class="course-title">{{ course.course_code }} – {{ course.name }} ({{ course.year|date:"Y" }})</p>
